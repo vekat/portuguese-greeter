@@ -1,0 +1,8 @@
+module.exports = {
+  roles: {
+    member: 'role-id'
+  },
+  channels: {
+    greetings: 'channel-id'
+  }
+}

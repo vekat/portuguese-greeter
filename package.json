@@ -1,0 +1,24 @@
+{
+  "name": "portuguese-greeter",
+  "version": "1.0.0",
+  "description": "Discord bot for greeting new community members.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vekat/portuguese-greeter.git"
+  },
+  "author": "vekat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vekat/portuguese-greeter/issues"
+  },
+  "homepage": "https://github.com/vekat/portuguese-greeter#readme",
+  "dependencies": {
+    "debug-level": "^0.3.2",
+    "discord.js": "^12.5.1",
+    "foreman": "^3.0.1"
+  }
+}
