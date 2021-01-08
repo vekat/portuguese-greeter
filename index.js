@@ -31,15 +31,17 @@ client.on('guildMemberUpdate', async (before, after) => {
     return
   }
 
-  const yesterday = new Date(Date.now() - 24 * 3600 * 1000)
+  const threshold = new Date(Date.now() - settings.joinedLookback)
   // require joining recently
-  if (after.joinedAt < yesterday) {
+  if (after.joinedAt < threshold) {
     return
   }
 
   if (!after.guild.channels.cache.has(settings.channels.greetings)) {
     return logger.error(TAG, 'missing greetings channel')
   }
+
+  await new Promise(resolve => client.setTimeout(resolve, 5000))
 
   logger.info(TAG, 'greeting member', after.toString(), after.displayName)
 
