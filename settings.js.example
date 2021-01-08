@@ -4,5 +4,6 @@ module.exports = {
   },
   channels: {
     greetings: 'channel-id'
-  }
+  },
+  introductionMessage: (member) => `Welcome ${member}.`
 }

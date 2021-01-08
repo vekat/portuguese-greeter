@@ -44,8 +44,8 @@ client.on('guildMemberUpdate', async (before, after) => {
   logger.info(TAG, 'greeting member', after.toString(), after.displayName)
 
   const greetingsChannel = after.guild.channels.cache.get(settings.channels.greetings)
-  message = await greetingsChannel.send(`Boas-vindas, ${after}. Sinta-se livre para se apresentar aqui!`)
-  return message.delete({ timeout: 60_000, reason: 'greeting message timeout' })
+  message = await greetingsChannel.send(settings.introductionMessage(after))
+  return message.delete({ timeout: 5 * 60 * 1000, reason: 'greeting message timeout' })
 })
 
 client.login(BOT_TOKEN)
